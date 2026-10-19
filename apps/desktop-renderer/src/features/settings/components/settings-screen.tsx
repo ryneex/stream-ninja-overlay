@@ -219,11 +219,6 @@ export function SettingsScreen() {
           </Button>
         </div>
         <Check
-          label="Chat open"
-          checked={data.visible}
-          onCheckedChange={(checked) => form.visible.mutate(checked)}
-        />
-        <Check
           label="Drag border"
           checked={data.frame}
           onCheckedChange={(checked) => form.frame.mutate(checked)}

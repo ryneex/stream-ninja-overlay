@@ -1,0 +1,14 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+publicHoistPattern:
+  - "*oxfmt*"
+  - "*oxlint*"
+
+allowBuilds:
+  electron: true
+  electron-winstaller: true
+  esbuild: true
+  msw: true
+  sharp: true

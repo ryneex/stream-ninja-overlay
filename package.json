@@ -1,0 +1,23 @@
+{
+  "name": "stream-ninja-overlay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:desktop": "turbo run dev --filter=@repo/desktop --filter=@repo/desktop-renderer",
+    "make:linux": "turbo run make:linux",
+    "format": "oxfmt",
+    "lint": "oxlint",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "turbo": "^2.11.6",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.15.0"
+}

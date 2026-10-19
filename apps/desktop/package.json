@@ -1,0 +1,27 @@
+{
+  "name": "@repo/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "build": "tsx scripts/build.ts",
+    "make:linux": "electron-builder --config electron.config.ts -l",
+    "check-types": "tsc --noEmit",
+    "format": "oxfmt",
+    "lint": "oxlint --type-aware --type-check"
+  },
+  "dependencies": {
+    "@repo/ipc": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/config": "workspace:*",
+    "@repo/ts-config": "workspace:*",
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "tree-kill": "^1.2.2",
+    "tsx": "^4.23.13"
+  }
+}

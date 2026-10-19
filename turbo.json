@@ -1,0 +1,35 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["*"]
+    },
+    "@repo/desktop#build": {
+      "cache": false
+    },
+    "@repo/desktop-renderer#build": {
+      "dependsOn": ["@repo/desktop#build"],
+      "cache": false
+    },
+    "@repo/desktop#make:linux": {
+      "dependsOn": ["@repo/desktop-renderer#build"],
+      "cache": false
+    },
+    "@repo/desktop#make:win": {
+      "dependsOn": ["@repo/desktop-renderer#build"],
+      "cache": false
+    },
+    "check-types": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": ["STREAM_NINJA_DEBUG_PORT", "STREAM_NINJA_WAYLAND"]
+    }
+  }
+}

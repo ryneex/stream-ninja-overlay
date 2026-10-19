@@ -24,7 +24,7 @@ const config: Configuration = {
     finishArgs: [
       "--share=ipc",
       "--share=network",
-      "--socket=fallback-x11",
+      "--socket=x11",
       "--socket=wayland",
       "--socket=pulseaudio",
       "--device=dri",
